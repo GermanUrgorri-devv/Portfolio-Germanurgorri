@@ -1,0 +1,175 @@
+* {
+    color: #222428;
+    font-family: Montserrat, sans-serif;
+
+
+}
+
+
+
+/*
+0EA8B3
+29F1FF
+
+29F1FF
+FFBA3E
+
+B34700
+*/
+
+
+ion-header {
+    height: 75px;
+    padding: 0;
+}
+
+section {
+    border-radius: 0 !important;
+}
+
+form{
+
+    max-width: 500px;
+    border-radius: 10px;
+
+}
+
+ion-toolbar{
+    cursor: pointer;
+}
+
+
+.headerMenuButton{
+    --padding-start: 6px;
+    --padding-end: 6px;
+}
+
+.input {
+    background: #e0ac08;
+    color: #222428 !important;
+}
+
+.works {
+   
+
+    margin-inline: 3px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Apply the transform and box-shadow properties on hover */
+.works:hover {
+    transform: scale(1.03) translateY(-7px);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply the transform property on focus */
+.works:active {
+    transform: scale(1);
+    /* Add any additional styles you want */
+}
+
+.skillsetCard{
+    background: transparent;
+    box-shadow: none;
+
+    max-width: 200px;
+}
+
+.expImage{
+    width: 100px !important;
+   
+}
+
+.spacing {
+    letter-spacing: .3rem;
+}
+
+.sea {
+    height: 20px;
+    
+}
+
+.sand {
+    height: 50px;
+    
+}
+
+.whiteFont * {
+    color: #ffffff !important;
+}
+
+
+
+
+#headerMenu {
+    margin: 0;
+    background: white;
+}
+
+#intro {
+    
+    height: auto;
+    background: url(../../../assets/images/beach.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#intro div {
+    
+    background: #29292969;
+    backdrop-filter: blur(3px);
+
+}
+
+#profile {
+    max-width: auto;
+    max-height: 250px;
+    object-fit: contain;
+
+  
+
+    //border: 10px solid whitesmoke;
+
+}
+
+#profileName {
+    background: rgb(35, 37, 41) !important;
+
+    
+
+}
+
+
+.sc-ion-input-md-h, .sc-ion-textarea-md-h{
+    --highlight-color-valid: var(--ion-color-primary);
+  }
+
+@media (min-width: 768px) {
+
+    
+
+
+    #profileContainer{
+        border-top-left-radius: var(--bs-border-radius)!important;
+        border-bottom-left-radius: var(--bs-border-radius)!important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
+    #name{
+        border-top-right-radius: var(--bs-border-radius)!important;
+        border-bottom-right-radius: var(--bs-border-radius)!important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+@media (max-width: 720px) {
+    ion-toolbar *{
+        font-size: small;
+    }
+}
