@@ -1,7 +1,7 @@
 <ion-header class="d-none d-sm-flex justify-content-between " mode="md">
-  <ion-toolbar class="p-md-1 py-3" (click)="scrollTo('intro')">
+  <ion-toolbar class="p-md-1 py-3 " (click)="scrollTo('intro')">
     
-      <ion-title><strong>Germán Urgorri Urgoiti</strong></ion-title>
+      <ion-title class="mt-md-3"><strong>Germán Urgorri Urgoiti</strong></ion-title>
       <h6 class="ms-4">Frontend Developer</h6>
     
   </ion-toolbar>
@@ -142,221 +142,21 @@
     <hr>
 
     <ion-grid>
-      <ion-row class="ion-align-items-center ion-justify-content-center">
-        <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
+      <ion-row class="flex-row ion-align-items-end ion-justify-content-center">
+        <ion-col size="4" size-lg="2" *ngFor="let item of skillset" >
+          <ion-card class="skillsetCard mx-auto h-100 d-flex flex-column justify-content-between">
+            <div class="skillsetImage h-100 d-flex justify-content-center align-items-center">
+                <img src="../../../assets/icon/{{item.id}}.svg"  id="" alt="">
+            </div>
             <hr>
             <ion-card-title>
-              <p class="text-center">Javascript</p>
+                <p class="text-center text-nowrap">{{ item.title }}</p>
             </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col>
-
-        <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
-        </ion-col> <ion-col class="" size="4" size-lg="2">
-
-
-          <ion-card class="skillsetCard mx-auto">
-            <img src="../../../assets/icon/javascript.svg" id="" alt="">
-            <hr>
-            <ion-card-title>
-              <p class="text-center">Javascript</p>
-            </ion-card-title>
-
-          </ion-card>
-
-
-
+        </ion-card>
         </ion-col>
       </ion-row>
+      
+      
     </ion-grid>
 
     <div class="">
@@ -426,33 +226,35 @@
   </section>
 
 
-  <ion-footer class=" text-center  whiteFont">
-    <div class="bg-dark p-5">
+  
+    <footer class="bg-dark p-5 text-center  whiteFont">
       <p class="my-auto">Developed and designed by Germán Urgorri Urgoiti. ©2023. All rights reserved.</p>
-    </div>
-  </ion-footer>
+    </footer>
+ 
+
+  <div class="tabs d-sm-none">
+   
+    <ion-tabs>
+      <ion-tab-bar>
+        <ion-tab-button (click)="scrollTo('Portfolio')">
+          <ion-icon name="folder"></ion-icon>
+          <ion-label>Portfolio</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="scrollTo('Portfolio')">
+          <ion-icon name="code-slash"></ion-icon>
+          <ion-label>Skillset</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="scrollTo('Experience')">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          <ion-label>Experience</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="scrollTo('Contact')">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Contact</ion-label>
+        </ion-tab-button>
+  
+      </ion-tab-bar>
+    </ion-tabs>
+  </div>
+
 </ion-content>
-
-<div class="d-none d-sm-none" mode="md">
-  <ion-tabs>
-    <ion-tab-bar>
-      <ion-tab-button>
-        <ion-icon name="folder"></ion-icon>
-        <ion-label>Portfolio</ion-label>
-      </ion-tab-button>
-      <ion-tab-button>
-        <ion-icon name="code-slash"></ion-icon>
-        <ion-label>Skillset</ion-label>
-      </ion-tab-button>
-      <ion-tab-button>
-        <ion-icon name="briefcase-outline"></ion-icon>
-        <ion-label>Experience</ion-label>
-      </ion-tab-button>
-      <ion-tab-button>
-        <ion-icon name="person"></ion-icon>
-        <ion-label>Contact</ion-label>
-      </ion-tab-button>
-
-    </ion-tab-bar>
-  </ion-tabs>
-</div>

@@ -3,6 +3,7 @@ import { IonContent } from '@ionic/angular';
 import { Location } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -16,10 +17,15 @@ export class HomePage implements OnInit {
   email?: String;
   message?: String;
 
+  skillset: any[] = [];
+
   constructor(
-    private location: Location,
+    //private location: Location,
     private formBuilder: FormBuilder,
-    ) {}
+    
+  ) { 
+   
+  }
 
   public contactForm = this.formBuilder.group({
     email: [''],
@@ -35,11 +41,20 @@ export class HomePage implements OnInit {
     }
   }
 
+  mostrar(card:any){
+    console.log(card)
+  }
+
   ngOnInit() {
 
-  
+    fetch('./assets/data/skillset.json').then(res => res.json())
+    .then(json => {
+      console.log(json)
+      this.skillset = json;
+      console.log(this.skillset)
+    });
 
   }
 
-  
+
 }
