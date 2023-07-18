@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "title": "Knight Rider Fanpage",
+        "description": "This is an end-of-year group project, besides the first time I use bootstrap.",
+        "linkWeb": "https://first-ionic-page-germanurgorri.web.app/",
+        "linkGitHub": "https://github.com/GermanUrgorri-devv/Proyect-Kitt-2022"
+    },
+    {
+        "id": 1,
+        "title": "My first Ionic Page",
+        "description": "My first Ionic Page, it has a game, some APIs services and your own photo gallery.",
+        "linkWeb": "https://first-ionic-page-germanurgorri.web.app/",
+        "linkGitHub": "https://github.com/GermanUrgorri-devv/photo-gallery"
+    }
+]

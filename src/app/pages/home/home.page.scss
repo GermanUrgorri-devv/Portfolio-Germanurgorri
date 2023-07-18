@@ -55,12 +55,14 @@ form {
 
 .works {
 
-
+    min-height: 410px !important;
     margin-inline: 3px;
     transition: all 0.2s ease-in-out;
     transform: scale(1);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+
+ 
 }
 
 /* Apply the transform and box-shadow properties on hover */
@@ -204,7 +206,7 @@ form {
     --highlight-color-valid: var(--ion-color-primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { //AQUÍ
 
     #profileContainer {
         border-top-left-radius: var(--bs-border-radius) !important;
@@ -219,6 +221,7 @@ form {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
     }
+
 }
 
 @media (max-width: 720px) {
@@ -248,11 +251,4 @@ form {
 
 
 
-}
-
-
-@media (max-width: 280px) {
-    ion-card-title p {
-        font-size: medium;
-    }
 }

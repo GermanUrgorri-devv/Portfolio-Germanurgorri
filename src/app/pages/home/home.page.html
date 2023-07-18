@@ -4,8 +4,6 @@
     <ion-title class="mt-md-3"><strong>Germán Urgorri Urgoiti</strong></ion-title>
     <h6 class="ms-4">Frontend Developer</h6>
 
-
-
   </ion-toolbar>
   <div id="headerMenu" class="d-flex w-100 h-100 " [ngClass]="{'dark': isDarkMode, 'light': !isDarkMode}">
     <ion-button class="headerMenuButton w-100 h-100" (click)="scrollTo('Portfolio')" expand="full" fill="clear">
@@ -44,7 +42,7 @@
 <div class="h-100 margin-tab">
   <ion-content>
 
-    <section id="intro" class="d-flex justify-content-center p-5" [ngClass]="{'dark': isDarkMode}">
+    <section id="intro" class=" d-flex justify-content-center p-5" [ngClass]="{'dark': isDarkMode}">
       <div class="d-flex flex-column-reverse  flex-md-row rounded">
 
         <div id="profileContainer"
@@ -95,57 +93,58 @@
       <ion-grid class="">
         <ion-row class="ion-align-items-center ion-justify-content-center">
 
-          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-            <ion-card class=" works">
-              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
+          <ion-col size="12" size-lg="4" size-md="5" size-sm="6" class="h-100" *ngFor="let card of portfolio">
+            <ion-card href="{{ card.linkWeb }}" target target="_blank" class="h-100 works">
+              <ion-img src="../../../assets/images/portfolio-images/{{card.id}}.png" alt=" image of {{card.title}} "></ion-img>
               <ion-card-header>
 
-                <ion-card-title> place.name </ion-card-title>
+                <ion-card-title> {{card.title}} </ion-card-title>
               </ion-card-header>
               <ion-card-content>
 
 
-                <p> place.describe </p>
+                <p> {{card.description}} </p>
+                <br>
+                <div class="btn-group w-100" role="group">
+                  <a href="{{ card.linkWeb }}" target="_blank" type="button"
+                    class="d-flex align-items-center justify-content-center btn "
+                    [ngClass]="{'btn-outline-light': isDarkMode, 'btn-info': !isDarkMode}">
+                    <ion-icon size="large" name="globe-outline"></ion-icon>
+                    <div class="d-flex align-items-center justify-content-center ms-2">Link</div>
+                  </a>
+
+                  <a href="{{ card.linkGitHub }}" target="_blank" type="button"
+                    class="d-flex align-items-center justify-content-center btn "
+                    [ngClass]="{'btn-outline-light': isDarkMode, 'btn-warning': !isDarkMode}">
+                    <ion-icon size="large" name="logo-github"></ion-icon>
+                    <div class="d-flex align-items-center justify-content-center ms-2">Repsitoriy</div>
+                  </a>
+                </div>
               </ion-card-content>
             </ion-card>
           </ion-col>
-          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-            <ion-card class=" works">
-              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
+
+          <ion-col size="12" size-lg="4" size-md="5" size-sm="6" class="h-100" >
+            <ion-card class="h-100" style="min-height: 410px;">
+              <ion-img src="../../../assets/images/portfolio-images/wallpaper.jpg" alt=" image of coding wallpaper "></ion-img>
               <ion-card-header>
 
-                <ion-card-title> place.name </ion-card-title>
+                <ion-card-title> Next Project, in construction <ion-icon name="settings-outline"></ion-icon></ion-card-title>
               </ion-card-header>
               <ion-card-content>
 
 
-                <p> place.describe </p>
+                I am currently working on my next project to include it here. 
+               
+
               </ion-card-content>
             </ion-card>
           </ion-col>
 
-          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-            <ion-card class=" works">
-              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
-              <ion-card-header>
-
-                <ion-card-title> place.name </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-
-
-                <p> place.describe </p>
-              </ion-card-content>
-            </ion-card>
-
-
-          </ion-col>
         </ion-row>
       </ion-grid>
 
-
     </section>
-
 
     <section class="  py-5 bg-info whiteFont" id="Skillset" [ngClass]="{'bg-dark': isDarkMode, 'bg-info': !isDarkMode}">
       <h1 class=" spacing text-uppercase text-center">Skillset</h1>
@@ -218,13 +217,13 @@
         <div class="form-group">
           <label for="formGroupExampleInput">Your contact email:</label>
           <input type="email" class="form-control" [(ngModel)]="email" id="email" formControlName="email"
-            placeholder="Write a valid email">
+            placeholder="I need a email to respond">
         </div>
 
         <br>
         <div class="form-group">
           <label for="formGroupExampleInput2">Your message:</label>
-          <textarea class="form-control" placeholder="Write your messague here :D" [(ngModel)]="message"
+          <textarea class="form-control" placeholder="Write your message here :D" [(ngModel)]="message"
             formControlName="message" id="message" [maxlength]="1000"></textarea>
         </div>
         <br>
@@ -237,20 +236,21 @@
       </form>
 
       <div class="w-100 mt-4  d-flex justify-content-center">
-        <ion-button class="mx-3" shape="round"   href="https://www.linkedin.com/in/german-urgorri" target="_blank">
+        <ion-button shape="round" href="https://www.linkedin.com/in/german-urgorri" target="_blank">
           <ion-icon slot="start" size="large" name="logo-linkedin"></ion-icon>
           Linkedin
         </ion-button>
-        <ion-button color="purple" class="mx-3" shape="round" href="https://github.com/GermanUrgorri-devv" target="_blank">
+        <ion-button color="purple" shape="round" href="https://github.com/GermanUrgorri-devv"
+          target="_blank">
           <ion-icon slot="start" size="large" name="logo-github"></ion-icon>
           GitHub
         </ion-button>
-        <ion-button color="danger" class="mx-3" shape="round"  href="../../../assets/docs/CV German Urgorri.pdf" target="_blank">
-          <ion-icon slot="start" size="large"
-            name="document-text-outline"></ion-icon>
-            CV.pdf
+        <ion-button color="danger" shape="round" href="../../../assets/docs/CV German Urgorri.pdf"
+          target="_blank">
+          <ion-icon slot="start" size="large" name="document-text-outline"></ion-icon>
+          CV.pdf
         </ion-button>
-        
+
       </div>
 
 

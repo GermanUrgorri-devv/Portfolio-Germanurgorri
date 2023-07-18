@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonContent } from '@ionic/angular';
+import { AlertController, IonContent } from '@ionic/angular';
 import emailjs,  { EmailJSResponseStatus, init } from '@emailjs/browser';
 import { FormBuilder, Validators } from '@angular/forms';
 //import { DatabaseService } from '../../services/database.service';
@@ -17,12 +17,14 @@ export class HomePage implements OnInit {
   public email?: String;
   public message?: String;
   public skillset: any;
+  public portfolio: any;
 
   public isDarkMode = false;
 
   constructor(
     //private location: Location,
     private formBuilder: FormBuilder,
+    private alertController: AlertController
     //private database: DatabaseService
 
   ) {
@@ -68,7 +70,13 @@ export class HomePage implements OnInit {
 
     //this.skillset = this.database.getSkillset()
 
+    fetch('./assets/data/links.json').then(res => res.json())
+    .then(json => {
 
+      this.portfolio = json;
+      console.log(this.portfolio)
+
+    });
 
     fetch('./assets/data/skillset.json').then(res => res.json())
       .then(json => {
@@ -77,6 +85,7 @@ export class HomePage implements OnInit {
 
       });
 
+      console.log(this.portfolio)
   }
 
   public formLoading = false;
@@ -91,7 +100,15 @@ export class HomePage implements OnInit {
 
     emailjs.send('service_qx5gh5i', 'template_stlpgdr', templateParams)
       .then(
-        (response) => {
+        async (response) => {
+
+          const alert = await this.alertController.create({
+            header: 'Email sended!',
+            buttons: ['OK'],
+          });
+      
+          await alert.present();
+
           this.email =  "";
           this.message =  "";
           this.formLoading = false;
