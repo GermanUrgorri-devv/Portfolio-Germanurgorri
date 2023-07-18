@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
-import { Location } from '@angular/common';
-import { FormBuilder } from '@angular/forms';
-
+import emailjs,  { EmailJSResponseStatus, init } from '@emailjs/browser';
+import { FormBuilder, Validators } from '@angular/forms';
+//import { DatabaseService } from '../../services/database.service';
 
 @Component({
   selector: 'app-home',
@@ -14,26 +14,30 @@ export class HomePage implements OnInit {
   @ViewChild(IonContent, { static: false })
   content!: IonContent;
 
-  email?: String;
-  message?: String;
+  public email?: String;
+  public message?: String;
+  public skillset: any;
 
-  skillset: any[] = [];
+  public isDarkMode = false;
 
   constructor(
     //private location: Location,
     private formBuilder: FormBuilder,
-    
-  ) { 
-   
+    //private database: DatabaseService
+
+  ) {
+    //Coloca esto en alguna parte de tu constructor
+    init("LimrGaKPs4SaimONU"); // esto inicializa EmailJS
+
   }
 
   public contactForm = this.formBuilder.group({
-    email: [''],
-    message: [''],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', [Validators.required]],
   });
 
   // Method that allows scrolling to a specific element on the page
-  scrollTo(elementId: string) {
+  public scrollTo(elementId: string) {
     let element = document.getElementById(elementId);
     if (element !== null) {
       let yOffset = element.offsetTop;
@@ -41,20 +45,62 @@ export class HomePage implements OnInit {
     }
   }
 
-  mostrar(card:any){
+  public mostrar(card: any) {
     console.log(card)
+  }
+
+
+  public switchTheme(event: any) {
+
+    switch (event.detail.value) {
+      case 'light':
+        document.body.setAttribute('color-theme', 'light');
+        this.isDarkMode = false;
+        break;
+      case 'dark':
+        document.body.setAttribute('color-theme', 'dark');
+        this.isDarkMode = true;
+        break;
+    }
   }
 
   ngOnInit() {
 
+    //this.skillset = this.database.getSkillset()
+
+
+
     fetch('./assets/data/skillset.json').then(res => res.json())
-    .then(json => {
-      console.log(json)
-      this.skillset = json;
-      console.log(this.skillset)
-    });
+      .then(json => {
+
+        this.skillset = json;
+
+      });
 
   }
 
+  public formLoading = false;
+  public onSubmit() {
 
+    this.formLoading = true;
+    const templateParams = {
+      from_name: this.email,
+      to_name: 'Germán',
+      message: this.message + 'aa',
+    };
+
+    emailjs.send('service_qx5gh5i', 'template_stlpgdr', templateParams)
+      .then(
+        (response) => {
+          this.email =  "";
+          this.message =  "";
+          this.formLoading = false;
+
+        },
+        (err) => {
+          console.log('Error al enviar el correo:', err);
+          this.formLoading = false;
+        }
+      );
+  }
 }

@@ -1,11 +1,13 @@
 <ion-header class="d-none d-sm-flex justify-content-between " mode="md">
   <ion-toolbar class="p-md-1 py-3 " (click)="scrollTo('intro')">
-    
-      <ion-title class="mt-md-3"><strong>Germán Urgorri Urgoiti</strong></ion-title>
-      <h6 class="ms-4">Frontend Developer</h6>
-    
+
+    <ion-title class="mt-md-3"><strong>Germán Urgorri Urgoiti</strong></ion-title>
+    <h6 class="ms-4">Frontend Developer</h6>
+
+
+
   </ion-toolbar>
-  <div id="headerMenu" class="d-flex w-100 h-100 ">
+  <div id="headerMenu" class="d-flex w-100 h-100 " [ngClass]="{'dark': isDarkMode, 'light': !isDarkMode}">
     <ion-button class="headerMenuButton w-100 h-100" (click)="scrollTo('Portfolio')" expand="full" fill="clear">
       <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
 
@@ -27,7 +29,7 @@
         <p class="my-auto fs-lg-1">Experience</p>
       </div>
     </ion-button>
-    <ion-button class="headerMenuButton w-100 h-100" (click)="scrollTo('Contact')" expand="full" fill="clear">
+    <ion-button class="headerMenuButton w-100 h-100" (click)="scrollTo('footer')" expand="full" fill="clear">
       <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
 
         <ion-icon size="large" class="me-lg-2" name="person"></ion-icon>
@@ -38,223 +40,257 @@
 
 </ion-header>
 
-<!--header  class="d-sm-none"-->
-<!--footer class="ion-no-border d-none d-sm-block"-->
-<ion-content [fullscreen]="true">
 
-  <section id="intro" class="d-flex justify-content-center p-5">
-    <div class="d-flex flex-column-reverse  flex-md-row rounded">
+<div class="h-100 margin-tab">
+  <ion-content>
 
-      <div id="profileContainer"
-        class="d-flex justify-content-center align-items-center w-auto py-3 px-4 px-lg-5  rounded-bottom  ">
-        <img src="../../../assets/images/profile.jpg" class="rounded-circle border border-light border-4" id="profile"
-          alt="">
-      </div>
+    <section id="intro" class="d-flex justify-content-center p-5" [ngClass]="{'dark': isDarkMode}">
+      <div class="d-flex flex-column-reverse  flex-md-row rounded">
 
-      <div id="name" class="w-100 py-3 px-3 ps-md-1  px-lg-5 rounded-top">
-        <div
-          class="h-100 m-auto rounded-2 p-4 whiteFont text-center d-flex flex-column align-items-center justify-content-center"
-          color="dark" id="profileName">
-          <h1 class="">Germán Urgorri Urgoiti</h1>
-          <hr class="w-100">
-          <h4 class="spacing">Frontend Developer</h4>
+        <div id="profileContainer"
+          class="d-flex justify-content-center align-items-center w-auto py-3 px-4 px-lg-5  rounded-bottom  ">
+          <img src="../../../assets/images/profile.jpg" class="rounded-circle border border-light border-4" id="profile"
+            alt="Profile image">
+        </div>
+
+        <div id="name" class="w-100 py-3 px-3 ps-md-1  px-lg-5 rounded-top">
+          <div
+            class="h-100 m-auto rounded-2 p-4 whiteFont text-center d-flex flex-column align-items-center justify-content-center"
+            id="profileName">
+            <h1 class="">Germán Urgorri Urgoiti</h1>
+            <hr class="w-100">
+            <h4 class="spacing">Frontend Developer</h4>
+            <ion-segment mode="ios" value="light" (ionChange)="switchTheme($event)">
+
+              <ion-segment-button value="light">
+                <ion-icon class="mt-1" color="warning" name="sunny"></ion-icon>
+                <ion-label>Light</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="dark">
+                <ion-icon class="mt-1" name="moon"></ion-icon>
+                <ion-label>Dark</ion-label>
+              </ion-segment-button>
+
+              <ion-segment-button class="d-none" value="segment">
+                <div id="sunglasses" class="">
+                  <img src="../../../assets/icon/sunglasses.png" alt="icon of a cyberpunk glasses">
+                </div>
+                <ion-label class="mt-0">2077 Dark</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
         </div>
       </div>
-    </div>
 
-  </section>
-  <div class="sea bg-info"></div>
-  <div class="sand bg-warning"></div>
-
-
-  <section class="py-5" id="Portfolio">
-    <h1 class="spacing text-uppercase text-center">Portfolio</h1>
-    <hr>
-
-    <ion-grid class="">
-      <ion-row class="ion-align-items-center ion-justify-content-center">
-
-        <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-          <ion-card class=" works">
-            <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
-            <ion-card-header>
-
-              <ion-card-title> place.name </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
+    </section>
+    <div class="sea bg-info" [ngClass]="{'d-none': isDarkMode}"></div>
+    <div class="sand bg-warning" [ngClass]="{'d-none': isDarkMode}"></div>
 
 
-              <p> place.describe </p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-          <ion-card class=" works">
-            <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
-            <ion-card-header>
 
-              <ion-card-title> place.name </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-
-
-              <p> place.describe </p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-
-        <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
-          <ion-card class=" works">
-            <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
-            <ion-card-header>
-
-              <ion-card-title> place.name </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-
-
-              <p> place.describe </p>
-            </ion-card-content>
-          </ion-card>
-
-
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-
-    <!--
-  añadir:
-
-  Proyecto Kitt
-  tienda UD Las Palmas
-  trabajo angular
-
-
-  
--->
-
-  </section>
-
-
-  <section class="  py-5 bg-info whiteFont" id="Skillset">
-    <h1 class=" spacing text-uppercase text-center">Skillset</h1>
-    <hr>
-
-    <ion-grid>
-      <ion-row class="flex-row ion-align-items-end ion-justify-content-center">
-        <ion-col size="4" size-lg="2" *ngFor="let item of skillset" >
-          <ion-card class="skillsetCard mx-auto h-100 d-flex flex-column justify-content-between">
-            <div class="skillsetImage h-100 d-flex justify-content-center align-items-center">
-                <img src="../../../assets/icon/{{item.id}}.svg"  id="" alt="">
-            </div>
-            <hr>
-            <ion-card-title>
-                <p class="text-center text-nowrap">{{ item.title }}</p>
-            </ion-card-title>
-        </ion-card>
-        </ion-col>
-      </ion-row>
-      
-      
-    </ion-grid>
-
-    <div class="">
-
-
-    </div>
-  </section>
-
-
-  <section class=" py-5" id="Experience">
-    <h1 class=" spacing text-uppercase text-center">Experience</h1>
-    <hr>
-    <div class="d-flex justify-content-center">
-      <ion-card class="experience">
-        <ion-card-header>
-          <div class="d-flex align-items-center ">
-            <ion-thumbnail class="h-100 me-3 expImage">
-              <img class="h-100 " alt="Silhouette of a person's head"
-                src="../../../assets/images/company-images/TWD.jpg" />
-            </ion-thumbnail>
-            <div>
-              <ion-card-title>Card Title</ion-card-title>
-              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            </div>
-          </div>
-
-
-        </ion-card-header>
-
-        <ion-card-content>
-
-          <ul>
-
-            <li>Desarrollo de aplicación web en Ionic Angular</li>
-            <li>Encargado principal en el desarrollo frontend con Typescript y en diseño con bootstrap y CSS</li>
-
-          </ul>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </section>
-
-  <section class="py-5 bg-info " id="Contact">
-    <div class="whiteFont">
-      <h1 class=" spacing text-uppercase text-center">Contact</h1>
+    <section class="py-5" id="Portfolio">
+      <h1 class="spacing text-uppercase text-center">Portfolio</h1>
       <hr>
-    </div>
-    <div>
-      <form class=" bg-light m-auto p-4" [formGroup]="contactForm" mode="md">
 
-        <ion-input label="Your email" label-placement="floating" fill="outline" [(ngModel)]="email" id="email"
-          formControlName="email" placeholder="Ingrese su correo" type="email"></ion-input>
+      <ion-grid class="">
+        <ion-row class="ion-align-items-center ion-justify-content-center">
+
+          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
+            <ion-card class=" works">
+              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
+              <ion-card-header>
+
+                <ion-card-title> place.name </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+
+
+                <p> place.describe </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
+            <ion-card class=" works">
+              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
+              <ion-card-header>
+
+                <ion-card-title> place.name </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+
+
+                <p> place.describe </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col size="12" size-lg="3" size-md="4" size-sm="6">
+            <ion-card class=" works">
+              <ion-img src="../../../assets/images/angular.png" alt=" place.describe "></ion-img>
+              <ion-card-header>
+
+                <ion-card-title> place.name </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+
+
+                <p> place.describe </p>
+              </ion-card-content>
+            </ion-card>
+
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </section>
+
+
+    <section class="  py-5 bg-info whiteFont" id="Skillset" [ngClass]="{'bg-dark': isDarkMode, 'bg-info': !isDarkMode}">
+      <h1 class=" spacing text-uppercase text-center">Skillset</h1>
+      <hr>
+
+      <ion-grid>
+        <ion-row class="flex-row ion-align-items-end ion-justify-content-center">
+          <ion-col size="4" size-lg="2" *ngFor="let item of skillset">
+            <ion-card class="skillsetCard mx-auto h-100 d-flex flex-column justify-content-between">
+              <div class="skillsetImage h-100 d-flex justify-content-center align-items-center">
+                <img src="../../../assets/icon/{{item.id}}.svg" id="" alt="logo of {{item.title}}">
+              </div>
+              <hr>
+              <ion-card-title>
+                <p class="text-center text-nowrap">{{ item.title }}</p>
+              </ion-card-title>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </section>
+
+
+    <section class=" py-5" id="Experience">
+      <h1 class=" spacing text-uppercase text-center">Experience</h1>
+      <hr>
+      <div class="d-flex justify-content-center">
+        <ion-card class="experience">
+          <ion-card-header>
+            <div class="d-flex align-items-center ">
+              <ion-thumbnail class="h-100 me-3 expImage">
+                <img class="h-100 " alt="Silhouette of a person's head"
+                  src="../../../assets/images/company-images/TWD.jpg" />
+              </ion-thumbnail>
+              <div>
+                <ion-card-title>The Wise Dreams</ion-card-title>
+                <ion-card-subtitle>Web Developer | Mar 2023 - Jun 2023 </ion-card-subtitle>
+              </div>
+            </div>
+
+
+          </ion-card-header>
+
+          <ion-card-content>
+
+            <ul>
+
+              <li>Web development in Ionic Angular App</li>
+              <li>Main person in charge of frontend development with Typescript and layout with bootstrap and CSS</li>
+
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </section>
+
+    <section class="pt-5 pb-4 " id="Contact" [ngClass]="{'bg-dark': isDarkMode, 'bg-info': !isDarkMode}">
+      <div class="whiteFont">
+        <h1 class=" spacing text-uppercase text-center">Contact</h1>
+        <hr>
+      </div>
+
+      <form class=" bg-light m-auto p-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()"
+        [ngClass]="{'bg-dark': isDarkMode, 'bg-info': !isDarkMode}">
+
+
+
+        <div class="form-group">
+          <label for="formGroupExampleInput">Your contact email:</label>
+          <input type="email" class="form-control" [(ngModel)]="email" id="email" formControlName="email"
+            placeholder="Write a valid email">
+        </div>
 
         <br>
-
-        <ion-textarea label="Outline textarea" labelPlacement="floating" fill="outline" placeholder="Enter text"
-          [(ngModel)]="message" formControlName="message" id="message" [autoGrow]="true" [counter]="true"
-          [maxlength]="1000">
-        </ion-textarea>
-
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Your message:</label>
+          <textarea class="form-control" placeholder="Write your messague here :D" [(ngModel)]="message"
+            formControlName="message" id="message" [maxlength]="1000"></textarea>
+        </div>
         <br>
 
-        <input type="submit" class="btn btn-info btn-lg w-100" value="Enviar">
+        <input *ngIf="contactForm.controls.email.valid " [disabled]="contactForm.invalid || formLoading" type="submit"
+          class="btn  btn-lg w-100" value="Write me and send"
+          [ngClass]="{'btn-light': isDarkMode, 'btn-info': !isDarkMode}">
 
+        <p>My email is:<strong> germanurgorri@gmail.com</strong>, you can write there if you want too. </p>
       </form>
-    </div>
-  </section>
+
+      <div class="w-100 mt-4  d-flex justify-content-center">
+        <ion-button class="mx-3" shape="round"   href="https://www.linkedin.com/in/german-urgorri" target="_blank">
+          <ion-icon slot="start" size="large" name="logo-linkedin"></ion-icon>
+          Linkedin
+        </ion-button>
+        <ion-button color="purple" class="mx-3" shape="round" href="https://github.com/GermanUrgorri-devv" target="_blank">
+          <ion-icon slot="start" size="large" name="logo-github"></ion-icon>
+          GitHub
+        </ion-button>
+        <ion-button color="danger" class="mx-3" shape="round"  href="../../../assets/docs/CV German Urgorri.pdf" target="_blank">
+          <ion-icon slot="start" size="large"
+            name="document-text-outline"></ion-icon>
+            CV.pdf
+        </ion-button>
+        
+      </div>
 
 
-  
-    <footer class="bg-dark p-5 text-center  whiteFont">
+
+
+
+    </section>
+
+
+
+    <footer id="footer" class=" p-4 p-md-5 text-center  whiteFont" [ngClass]="{'bg-dark': !isDarkMode}">
       <p class="my-auto">Developed and designed by Germán Urgorri Urgoiti. ©2023. All rights reserved.</p>
     </footer>
- 
 
-  <div class="tabs d-sm-none">
-   
-    <ion-tabs>
-      <ion-tab-bar>
-        <ion-tab-button (click)="scrollTo('Portfolio')">
-          <ion-icon name="folder"></ion-icon>
-          <ion-label>Portfolio</ion-label>
-        </ion-tab-button>
-        <ion-tab-button (click)="scrollTo('Portfolio')">
-          <ion-icon name="code-slash"></ion-icon>
-          <ion-label>Skillset</ion-label>
-        </ion-tab-button>
-        <ion-tab-button (click)="scrollTo('Experience')">
-          <ion-icon name="briefcase-outline"></ion-icon>
-          <ion-label>Experience</ion-label>
-        </ion-tab-button>
-        <ion-tab-button (click)="scrollTo('Contact')">
-          <ion-icon name="person"></ion-icon>
-          <ion-label>Contact</ion-label>
-        </ion-tab-button>
-  
-      </ion-tab-bar>
-    </ion-tabs>
-  </div>
 
-</ion-content>
+
+    <div class="tabs d-sm-none">
+
+      <ion-tabs>
+        <ion-tab-bar>
+          <ion-tab-button (click)="scrollTo('Portfolio')">
+            <ion-icon name="folder"></ion-icon>
+            <ion-label>Portfolio</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="scrollTo('Skillset')">
+            <ion-icon name="code-slash"></ion-icon>
+            <ion-label>Skillset</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="scrollTo('Experience')">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <ion-label>Experience</ion-label>
+          </ion-tab-button>
+          <ion-tab-button (click)="scrollTo('footer')">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-tab-button>
+
+        </ion-tab-bar>
+      </ion-tabs>
+    </div>
+
+  </ion-content>
+</div>
