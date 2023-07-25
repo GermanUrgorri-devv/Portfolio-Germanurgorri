@@ -2,7 +2,6 @@
     font-family: Montserrat, sans-serif;
 }
 
-
 ion-header {
     height: 75px;
     padding: 0;
@@ -14,11 +13,12 @@ ion-toolbar {
 
 ion-segment {
     --background: #323437;
-
+    min-height: 54px;
 }
 
 ion-segment-button {
     --indicator-color: #595959 !important;
+
 }
 
 section {
@@ -31,8 +31,6 @@ form {
     border-radius: 10px;
 
 }
-
-
 
 
 .skillsetImage {
@@ -62,7 +60,6 @@ form {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 
- 
 }
 
 /* Apply the transform and box-shadow properties on hover */
@@ -77,8 +74,6 @@ form {
     /* Add any additional styles you want */
 }
 
-
-
 .skillsetCard {
     background: transparent;
     box-shadow: none;
@@ -88,7 +83,6 @@ form {
 
 .expImage {
     width: 100px !important;
-
 }
 
 .spacing {
@@ -110,22 +104,18 @@ form {
 }
 
 
-
-
 #headerMenu {
-
     margin: 0;
-
 }
 
 
-  #headerMenu.dark {
-        background: #1f1f1f;
-        
-        *{
-            color: rgb(228, 227, 227);
-        }
+#headerMenu.dark {
+    background: #1f1f1f;
+
+    * {
+        color: rgb(228, 227, 227);
     }
+}
 
 #intro {
 
@@ -139,7 +129,6 @@ form {
 
 #intro.dark {
 
-    
     min-height: 460px;
     height: auto;
     background: url(../../../assets/images/cattop.jpg);
@@ -154,7 +143,6 @@ form {
     background: #29292969;
     backdrop-filter: blur(3px);
 
-
     @media (min-width: 768px) {
         max-height: 255px;
     }
@@ -164,8 +152,6 @@ form {
     max-width: auto;
     max-height: 250px;
     object-fit: contain;
-
-
 }
 
 #profileName {
@@ -173,20 +159,15 @@ form {
 
 }
 
-
-
 #sunglasses {
-
     width: 26px;
     background: transparent !important;
 }
 
 
 .md #sunglasses {
-
     margin-top: 12px;
     margin-bottom: 0 !important;
-
 }
 
 .tabs {
@@ -206,7 +187,8 @@ form {
     --highlight-color-valid: var(--ion-color-primary);
 }
 
-@media (min-width: 768px) { //AQUÍ
+@media (min-width: 768px) {
+    //AQUÍ
 
     #profileContainer {
         border-top-left-radius: var(--bs-border-radius) !important;
@@ -221,7 +203,6 @@ form {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
     }
-
 }
 
 @media (max-width: 720px) {
@@ -248,7 +229,4 @@ form {
     ion-card-title p {
         font-size: large;
     }
-
-
-
 }
