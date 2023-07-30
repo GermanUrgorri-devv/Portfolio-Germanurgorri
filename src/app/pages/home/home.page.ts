@@ -68,8 +68,6 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
 
-    //this.skillset = this.database.getSkillset()
-
     fetch('./assets/data/links.json').then(res => res.json())
     .then(json => {
 
@@ -101,7 +99,6 @@ export class HomePage implements OnInit {
     emailjs.send('service_qx5gh5i', 'template_stlpgdr', templateParams)
       .then(
         async (response) => {
-
           const alert = await this.alertController.create({
             header: 'Email sended!',
             buttons: ['OK'],

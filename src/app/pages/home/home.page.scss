@@ -2,6 +2,10 @@
     font-family: Montserrat, sans-serif;
 }
 
+ion-title {
+    line-height: 1.5;
+}
+
 ion-header {
     height: 75px;
     padding: 0;
@@ -20,6 +24,7 @@ ion-segment-button {
     --indicator-color: #595959 !important;
 
 }
+
 
 section {
     border-radius: 0 !important;
@@ -103,17 +108,19 @@ form {
     color: #ffffff !important;
 }
 
-
-#headerMenu {
+.headerMenu{
+    width: 60%;
+}
+.header {
     margin: 0;
 }
 
 
-#headerMenu.dark {
-    background: #1f1f1f;
+.header.dark {
+    background: #1f1f1f !important;
 
     * {
-        color: rgb(228, 227, 227);
+        color: rgb(228, 227, 227) !important;
     }
 }
 
@@ -188,7 +195,6 @@ form {
 }
 
 @media (min-width: 768px) {
-    //AQUÍ
 
     #profileContainer {
         border-top-left-radius: var(--bs-border-radius) !important;
@@ -203,11 +209,18 @@ form {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
     }
+
 }
 
-@media (max-width: 720px) {
-    ion-toolbar * {
-        font-size: small;
+@media (max-width: 768px) {
+    .headerMenu{
+        width: 60%;
+    }
+    #introButton{
+        width: 40%;
+    }
+    .menuButtonText{
+        font-size: smaller !important;
     }
 }
 

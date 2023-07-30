@@ -1,10 +1,10 @@
 [
     {
         "id": 0,
-        "title": "Knight Rider Fanpage",
-        "description": "This is an end-of-year group project, besides the first time I use bootstrap.",
-        "linkWeb": "https://first-ionic-page-germanurgorri.web.app/",
-        "linkGitHub": "https://github.com/GermanUrgorri-devv/Proyect-Kitt-2022"
+        "title": "User roles with cats and dogs",
+        "description": "This is small project of authentication and user role management, the page has two roles, cats and dogs, those roles give access to diferent pages.",
+        "linkWeb": "https://auth-and-roles-management.web.app/home",
+        "linkGitHub": "https://github.com/GermanUrgorri-devv/Login-and-Sign-up-with-authentication"
     },
     {
         "id": 1,
