@@ -46,11 +46,11 @@ export class HomePage implements OnInit {
       this.content.scrollToPoint(0, yOffset, 1000);
     }
   }
-
+/*
   public mostrar(card: any) {
     console.log(card)
   }
-
+*/
 
   public switchTheme(event: any) {
 
@@ -72,8 +72,7 @@ export class HomePage implements OnInit {
     .then(json => {
 
       this.portfolio = json;
-      console.log(this.portfolio)
-
+      
     });
 
     fetch('./assets/data/skillset.json').then(res => res.json())
@@ -82,8 +81,6 @@ export class HomePage implements OnInit {
         this.skillset = json;
 
       });
-
-      console.log(this.portfolio)
   }
 
   public formLoading = false;
