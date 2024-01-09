@@ -89,14 +89,21 @@ form {
 
 }
 
+.experience{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 /* Apply the transform and box-shadow properties on hover */
-.works:hover {
+.works:hover, .experience:hover {
     transform: scale(1.03) translateY(-7px);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Apply the transform property on focus */
-.works:active {
+.works:active, .experience:hover {
     transform: scale(1);
     /* Add any additional styles you want */
 }
